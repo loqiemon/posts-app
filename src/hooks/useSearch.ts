@@ -23,7 +23,7 @@ function useSearch<T>({array, searchProp} : useSearchProps<T>) {
     }else {
         const filteredArray = array.filter(item => {
             const propValue = item[searchProp] as string;
-            return propValue.includes(searchInput);
+            return propValue.toLowerCase().includes(searchInput.toLowerCase());
         });
         setSearchedArray(filteredArray);
     }
